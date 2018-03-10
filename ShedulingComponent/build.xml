@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<project name="Scheduling component" basedir=".">
+	<!-- Set properties -->
+	<property name="src" location="src"/>
+	<property name="build" location="build"/>
+	<property name="dist" location="dist"/>
+	<property name="doc" location="doc"/>
+	<property name="lib" location="lib"/>
+	
+	<target name="clean" description="clean project before start build">
+		<delete dir="${build}"/>
+		<delete dir="${dist}"/>
+	</target>
+	
+	<target name="init" description="prepare project for build" depends="clean">
+		<mkdir dir="${build}"/>
+		<mkdir dir="${dist}"/>
+	</target>
+	
+	 <target name="doc" description="generate documentation">
+	 	<!-- clean old doc if exist -->
+	 	<delete dir="${doc}"/>
+	 	<!-- create documentation folder -->
+	 	<mkdir dir="${doc}"/>
+	 	<!-- generate documentation -->
+   	 </target>
+	    <javadoc sourcepath="${src}" destdir="${doc}"/>
+	
+</project>
